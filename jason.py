@@ -8,7 +8,7 @@ def norm(x):
     return x
 
 def to_json(x):
-    return {'date': str(x[0]), 'uuid': sum(x[1][:3]), 'temp': x[1][3], 'humidity': x[1][4]}
+    return {'date': str(x[0]), 'uuid': sum(x[1][:3]), 'temp': x[1][3], 'humidity': int(x[1][4] / 2.55) if x[1][4] > 85 else x[1][4]}
 
 
 a = open("p?rrwg").read()
